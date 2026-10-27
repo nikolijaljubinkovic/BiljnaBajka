@@ -1,0 +1,118 @@
+
+.stranica-prijave {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px 20px;
+  background: #f8f6ef;
+}
+
+.kartica-prijave {
+  width: 100%;
+  max-width: 460px;
+  padding: 36px;
+  background: #fffefa;
+  border: 1px solid #e6e4d9;
+  border-radius: 18px;
+}
+
+.nadnaslov {
+  color: #637b50;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+h1 {
+  margin: 14px 0;
+  color: #283c2b;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px;
+  text-align: center;
+}
+
+.opis {
+  margin-bottom: 28px;
+  color: #77786e;
+  line-height: 1.6;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  margin-top: 8px;
+  color: #344534;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d9ddcf;
+  border-radius: 8px;
+  background: white;
+  color: #283c2b;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: 2px solid #91a47d;
+  outline-offset: 1px;
+}
+
+button {
+  margin-top: 16px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #405b3c;
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: #30472e;
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.poruka {
+  color: #3f6b3c;
+  font-size: 14px;
+}
+
+.poruka.greska {
+  color: #b42318;
+}
+
+.link-registracija,
+.nazad {
+  display: block;
+  margin-top: 22px;
+  color: #666c60;
+  font-size: 14px;
+  text-align: center;
+}
+
+.link-registracija a {
+  color: #405b3c;
+  font-weight: 700;
+}
+
+.nazad {
+  text-decoration: none;
+}

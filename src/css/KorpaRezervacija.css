@@ -1,0 +1,682 @@
+
+.stranica-korpe {
+  --zelena: #294333;
+  --krem: #f8f6ef;
+  --tekst: #505b4b;
+  min-height: 75vh;
+  padding: 56px 6% 80px;
+  color: var(--zelena);
+  background: #fffefa;
+}
+
+.zaglavlje-stranice {
+  max-width: 720px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.nadnaslov,
+.oznaka-sekcije {
+  margin: 0 0 12px;
+  color: #7b8065;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+h1 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(36px, 5vw, 48px);
+  font-weight: 400;
+}
+
+.uvod {
+  margin-top: 14px;
+  color: var(--tekst);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Raspored kada korpa ima proizvode */
+.raspored-korpe {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  align-items: start;
+  gap: 26px;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.artikli-korpe {
+  min-width: 0;
+}
+
+/* Prazna korpa zauzima ceo raspoloživi prostor */
+.raspored-korpe.korpa-prazna {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.korpa-prazna .artikli-korpe {
+  width: 100%;
+}
+
+.sekcija-korpe,
+.rezime,
+.istorija,
+.kartica-porudzbine {
+  border: 1px solid #dedfce;
+  border-radius: 14px;
+  background: #fffefa;
+}
+
+.sekcija-korpe {
+  margin-bottom: 22px;
+  padding: 26px;
+}
+
+.naslov-stavki {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.naslov-stavki h2,
+.rezime h2,
+.zaglavlje-istorije h2 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 27px;
+  font-weight: 400;
+}
+
+.oznaka-sekcije {
+  margin-bottom: 7px;
+  font-size: 9px;
+}
+
+.broj-rezervacija {
+  color: #7b8065;
+  font-size: 12px;
+}
+
+.stavka {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 0;
+  border-bottom: 1px solid #dedfce;
+}
+
+.stavka:last-child {
+  border-bottom: none;
+}
+
+.slika-proizvoda {
+  width: 100px;
+  height: 118px;
+  border-radius: 9px;
+  background: #f1f0e7;
+  object-fit: cover;
+}
+
+.detalji {
+  min-width: 0;
+}
+
+.tip-proizvoda {
+  color: #7b8065;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.detalji h3,
+.detalji-istorije h3 {
+  margin: 7px 0;
+  overflow-wrap: anywhere;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.status {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.status-rezervisano,
+.status-potvrdjena {
+  background: #f4ead2;
+  color: #79591d;
+}
+
+.status-pristiglo {
+  background: #e2eddf;
+  color: #315a38;
+}
+
+.status-u_pripremi {
+  background: #e7e9dc;
+  color: #495a37;
+}
+
+.status-otkazano {
+  background: #f3e2df;
+  color: #8a3d35;
+}
+
+.datum {
+  margin: 9px 0 6px;
+  color: #7b8065;
+  font-size: 11px;
+}
+
+.cena-jedinice,
+.kolicina-fiksna {
+  margin: 0;
+  color: var(--tekst);
+  font-size: 12px;
+}
+
+.kontrole {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+  padding: 4px 8px;
+  border: 1px solid #dedfce;
+  border-radius: 7px;
+}
+
+.kontrole button {
+  width: 25px;
+  height: 25px;
+  border: none;
+  background: transparent;
+  color: var(--zelena);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.kontrole button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.kontrole span {
+  min-width: 15px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.kolicina-fiksna {
+  margin-top: 12px;
+}
+
+.desna-strana {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.cena-stavke {
+  font-size: 13px;
+  text-align: right;
+}
+
+.cena-precrtana {
+  color: #8b8b80;
+  text-decoration: line-through;
+}
+
+.ukloni {
+  padding: 5px 0;
+  border: none;
+  background: transparent;
+  color: #7b8065;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.ocenjivanje,
+.poruka-otkazivanja {
+  grid-column: 1 / -1;
+}
+
+.ocenjivanje {
+  padding: 13px;
+  border: 1px solid #dedfce;
+  border-radius: 8px;
+  background: #f8f7f0;
+}
+
+.naslov-ocene {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.zvezdice {
+  display: flex;
+  gap: 5px;
+}
+
+.zvezdice button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #c9c8b9;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.zvezdice button.izabrana {
+  color: #b38a3c;
+}
+
+.postojeca-ocena {
+  margin: 7px 0 0;
+  color: #7b8065;
+  font-size: 11px;
+}
+
+.poruka-otkazivanja {
+  margin: 0;
+  color: #8a3d35;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.stavka-otkazana .slika-proizvoda {
+  opacity: 0.65;
+}
+
+/* Pregled kupovine */
+.rezime {
+  position: sticky;
+  top: 24px;
+  padding: 26px;
+}
+
+.rezime h2 {
+  margin-bottom: 25px;
+}
+
+.red-rezimea {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 17px 0;
+  color: var(--tekst);
+  font-size: 13px;
+}
+
+.ukupno {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 25px 0;
+  padding-top: 20px;
+  border-top: 1px solid #dedfce;
+}
+
+.ukupno span {
+  color: var(--tekst);
+  font-size: 12px;
+}
+
+.ukupno strong {
+  font-size: 25px;
+}
+
+/* Dugmad */
+.dugme-glavno,
+.dugme-sporedno,
+.dugme-otkazi {
+  display: flex;
+  min-height: 45px;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 15px;
+  border: 1px solid var(--zelena);
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.dugme-glavno {
+  background: var(--zelena);
+  color: #fffefa;
+}
+
+.dugme-glavno:hover {
+  background: #405c43;
+}
+
+.dugme-sporedno {
+  background: transparent;
+  color: var(--zelena);
+}
+
+.dugme-sporedno:hover {
+  background: #e5ebdd;
+}
+
+.dugme-placanje {
+  width: 100%;
+  font-size: 13px;
+}
+
+.dugme-otkazi {
+  border-color: #d8b6af;
+  background: transparent;
+  color: #8a3d35;
+}
+
+.dugme-otkazi:hover {
+  background: #f8eeeb;
+}
+
+.napomena {
+  color: #7b8065;
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.nastavi-razgledanje {
+  display: block;
+  margin-top: 16px;
+  color: #405c43;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Prazna korpa */
+.prazna-korpa {
+  display: flex;
+  min-height: 350px;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 22px;
+  padding: 55px 28px;
+  border: 1px solid #dedfce;
+  border-radius: 14px;
+  background: #fffefa;
+  text-align: center;
+}
+
+.ikona {
+  margin-bottom: 8px;
+  color: #7b8065;
+  font-size: 46px;
+  line-height: 1;
+}
+
+.prazna-korpa h2 {
+  margin: 15px 0 12px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.prazna-korpa p {
+  max-width: 480px;
+  margin: 0 auto;
+  color: var(--tekst);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.prazna-korpa .dugmad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+/* Istorija porudžbina */
+.istorija {
+  max-width: 1250px;
+  margin: 42px auto 0;
+  padding: 30px;
+}
+
+.zaglavlje-istorije {
+  margin-bottom: 25px;
+}
+
+.zaglavlje-istorije > p:last-child {
+  margin-bottom: 0;
+  color: var(--tekst);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.kartica-porudzbine {
+  margin-top: 20px;
+  padding: 23px;
+}
+
+.zaglavlje-porudzbine {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #dedfce;
+}
+
+.broj-porudzbine {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.zaglavlje-porudzbine .datum {
+  margin-bottom: 0;
+}
+
+.stavka-istorije {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 15px;
+  padding: 18px 0;
+  border-bottom: 1px solid #eeeade;
+}
+
+.slika-istorije {
+  width: 72px;
+  height: 82px;
+  border-radius: 8px;
+  background: #f1f0e7;
+  object-fit: cover;
+}
+
+.detalji-istorije h3 {
+  margin-top: 0;
+  font-size: 19px;
+}
+
+.detalji-istorije > p {
+  margin: 5px 0 8px;
+  color: var(--tekst);
+  font-size: 12px;
+}
+
+.ocena-istorije {
+  margin-top: 12px;
+}
+
+.ukupno-porudzbine {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px 0;
+  font-size: 13px;
+}
+
+.ukupno-porudzbine strong {
+  font-size: 16px;
+}
+
+.akcije-porudzbine {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid #dedfce;
+}
+
+.akcije-porudzbine button {
+  flex: 1 1 150px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .raspored-korpe:not(.korpa-prazna) {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 16px;
+  }
+
+  .sekcija-korpe,
+  .rezime {
+    padding: 20px;
+  }
+
+  .stavka {
+    grid-template-columns: 82px minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .slika-proizvoda {
+    width: 82px;
+    height: 100px;
+  }
+
+  .desna-strana {
+    grid-column: 2;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cena-stavke {
+    text-align: left;
+  }
+}
+
+/* Mobilni uređaji */
+@media (max-width: 700px) {
+  .stranica-korpe {
+    padding: 36px 16px 55px;
+  }
+
+  .raspored-korpe:not(.korpa-prazna) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .raspored-korpe:not(.korpa-prazna) .rezime {
+    position: static;
+    grid-row: 1;
+  }
+
+  .raspored-korpe:not(.korpa-prazna) .artikli-korpe {
+    grid-row: 2;
+  }
+
+  .prazna-korpa {
+    min-height: 300px;
+    padding: 42px 18px;
+  }
+
+  .prazna-korpa h2 {
+    font-size: 26px;
+  }
+
+  .sekcija-korpe,
+  .istorija {
+    padding: 19px;
+  }
+
+  .naslov-stavki h2,
+  .rezime h2,
+  .zaglavlje-istorije h2 {
+    font-size: 24px;
+  }
+
+  .stavka {
+    grid-template-columns: 78px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .slika-proizvoda {
+    width: 78px;
+    height: 95px;
+  }
+
+  .detalji h3 {
+    font-size: 19px;
+  }
+
+  .desna-strana {
+    grid-column: 2;
+  }
+
+  .zaglavlje-porudzbine {
+    flex-direction: column;
+  }
+
+  .stavka-istorije {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .slika-istorije {
+    width: 58px;
+    height: 68px;
+  }
+
+  .stavka-istorije > .cena-stavke {
+    grid-column: 2;
+  }
+
+  .istorija {
+    margin-top: 28px;
+  }
+
+  .kartica-porudzbine {
+    padding: 15px;
+  }
+
+  .akcije-porudzbine {
+    flex-direction: column;
+  }
+
+  .akcije-porudzbine button {
+    width: 100%;
+  }
+}
